@@ -31,4 +31,4 @@ module.exports.pi = pi;
 //     counter: counter,
 //     adder: adder,
 //     pi: pi
-};
+// };
