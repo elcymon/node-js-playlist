@@ -1,5 +1,8 @@
 //template engines allow us to load html, javascript etc on our response message to the client
-
+//partial views are needed to create views that appear in multiple template files
+//examples are navigation views, so that we do not have to hard code it into 
+//every view that they appear in 
+//also, changing it in one section does not entail changing in multiple places
 var express = require('express');
 
 //To give us access to the numerous cool features/functions in express
@@ -10,13 +13,13 @@ var app = express();
 app.set('view engine', 'ejs');
 
 //app also gives us access to http verbs or methods: get, post, delete and put requests.
-app.get('/',function(req,res){
-    res.sendFile(__dirname+'/index.html');
-});
+// app.get('/',function(req,res){
+//     res.sendFile(__dirname+'/index.html');
+// });
 
-app.get('/contact',function(req,res){
-    res.sendFile(__dirname+'/contact.html');
-});
+// app.get('/contact',function(req,res){
+//     res.sendFile(__dirname+'/contact.html');
+// });
 
 // //route parameters
 // app.get('/profile/:name', function(req,res){
@@ -25,6 +28,13 @@ app.get('/contact',function(req,res){
 
 
 //rendering views
+app.get('/',function(req,res){
+    res.render('index');
+});
+
+app.get('/contact',function(req,res){
+    res.render('contact');
+});
 app.get('/profile/:name', function(req,res){
     var data = {
         age: 29,
