@@ -1,3 +1,5 @@
+//#24 route parameters
+
 var express = require('express');
 
 //To give us access to the numerous cool features/functions in express
